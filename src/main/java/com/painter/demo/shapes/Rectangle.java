@@ -145,3 +145,6 @@ public class Rectangle implements Ishape{
         this.setTenth(data.tenth);
     }
 }
+/*
+
+ */

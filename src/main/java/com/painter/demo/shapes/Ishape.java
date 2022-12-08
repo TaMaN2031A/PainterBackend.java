@@ -35,7 +35,6 @@ public interface Ishape {
 
      String getSeventh();
 
-
      void setSeventh(String seventh);
 
      String getEight();
@@ -45,7 +44,9 @@ public interface Ishape {
      String getNinth();
 
      void setNinth(String ninth);
+
      String toString();
+
      void handle(jsonShape data);
 }
 

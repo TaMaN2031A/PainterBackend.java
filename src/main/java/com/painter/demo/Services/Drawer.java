@@ -2,7 +2,7 @@ package com.painter.demo.Services;
 import com.painter.demo.shapes.*;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
-import java.util.List;
+
 @Component
 public class Drawer
 {
@@ -14,20 +14,16 @@ public class Drawer
     {
         ArrayList state = new ArrayList<Ishape>() ;
         ArrayList buffer = new ArrayList<Ishape>() ;
-        System.out.println(History);
-        currentLevel++;
-        System.out.println(currentLevel);
+        currentLevel++ ;
         Ishape sentShape = factory.createShape(type); // FactorJob is done
         sentShape.handle(data); // Done
         if(currentLevel!=1)
             buffer = History.get(currentLevel-2);
-        int i = 0;
         for(Object iterator: buffer){
             state.add(iterator);
         }
         state.add(sentShape);
         History.add(currentLevel-1, state);
-        System.out.println(History);
         return formatter();
     }
     String formatter(){
@@ -46,7 +42,6 @@ public class Drawer
     public String undo()
     {
         currentLevel--;
-        System.out.println(History);
         return formatter();
     }
     public String redo()

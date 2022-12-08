@@ -4,7 +4,8 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 @Component
-public class jsonShape {
+public class jsonShape
+{
 
     public String first; // square
     public String second; //
