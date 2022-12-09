@@ -10,21 +10,11 @@ public class Drawer
     ArrayList<ArrayList<Ishape>> History = new ArrayList<>();
 
     Factory factory = new Factory();
-    public String addShape(String type, jsonShape data)
+    public void addShape(String type, jsonShape data)
     {
-        ArrayList state = new ArrayList<Ishape>() ;
-        ArrayList buffer = new ArrayList<Ishape>() ;
-        currentLevel++ ;
         Ishape sentShape = factory.createShape(type); // FactorJob is done
         sentShape.handle(data); // Done
-        if(currentLevel!=1)
-            buffer = History.get(currentLevel-2);
-        for(Object iterator: buffer){
-            state.add(iterator);
-        }
-        state.add(sentShape);
-        History.add(currentLevel-1, state);
-        return formatter();
+        storeInContainer(sentShape);
     }
     String formatter(){
         String carrierPigeons = "[";
@@ -49,6 +39,34 @@ public class Drawer
         currentLevel++;
         return formatter();
     }
+    public void copy(IDs ID)
+    {
+        String oldID, newID;
+        oldID = ID.ID; newID = ID.newID;
+        for(Ishape iterator: History.get(currentLevel-1))
+        {
+            if(iterator.getSecond().equals(oldID)) {
+                Ishape sentShape = iterator.clone(iterator);
+                sentShape.setSecond(newID);
+                storeInContainer(sentShape);
+                return;
+            }
+        }
+    }
 
+    public void storeInContainer(Ishape toBeSaved)
+    {
+        ArrayList state = new ArrayList<Ishape>() ;
+        ArrayList buffer = new ArrayList<Ishape>() ;
+        currentLevel++ ;
+        if(currentLevel!=1)
+            buffer = History.get(currentLevel-2);
+        for(Object iterator: buffer){
+            state.add(iterator);
+        }
+        state.add(toBeSaved);
+        History.add(currentLevel-1, state);
+        System.out.println(History);
+    }
 
 }

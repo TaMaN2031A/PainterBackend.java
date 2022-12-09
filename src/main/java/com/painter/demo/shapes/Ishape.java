@@ -40,13 +40,27 @@ public interface Ishape {
      String getEight();
     
      void setEight(String eight);
-    
+
      String getNinth();
 
      void setNinth(String ninth);
 
+     public String getTenth();
+
+     public void setTenth(String tenth);
+
+     public String getEleventh();
+
+     public void setEleventh(String eleventh);
+
+     public String getTwelfth();
+
+     public void setTwelfth(String twelfth);
+
      String toString();
 
      void handle(jsonShape data);
+
+     Ishape clone(Ishape toBeCloned);
 }
 

@@ -144,6 +144,24 @@ public class Rectangle implements Ishape{
         this.setNinth(data.ninth);
         this.setTenth(data.tenth);
     }
+    public Ishape clone(Ishape toBeCloned) {
+        Ishape cloned = new Rectangle();
+        jsonShape shadow = new jsonShape();
+        shadow.first = toBeCloned.getFirst();
+        shadow.second = toBeCloned.getSecond();
+        shadow.third = toBeCloned.getThird();
+        shadow.fourth = toBeCloned.getFourth();
+        shadow.fifth = toBeCloned.getFifth();
+        shadow.sixth = toBeCloned.getSixth();
+        shadow.seventh = toBeCloned.getSeventh();
+        shadow.eight = toBeCloned.getEight();
+        shadow.ninth = toBeCloned.getNinth();
+        shadow.tenth = toBeCloned.getTenth();
+        shadow.eleventh = toBeCloned.getEleventh();
+        shadow.twelfth = toBeCloned.getTwelfth();
+        cloned.handle(shadow);
+        return cloned;
+    }
 }
 /*
 
