@@ -16,6 +16,8 @@ public class Triangle implements Ishape{
     private String tenth;
     private String eleventh;
     private String twelfth;
+    private String thrteen;
+    private String fourteen;
 
 
     public String getFirst() {
@@ -114,6 +116,15 @@ public class Triangle implements Ishape{
         this.twelfth = twelfth;
     }
 
+    public String getThrteen() {return thrteen;}
+
+    public void setThrteen(String thrteen){ this.thrteen = thrteen;}
+
+    public String getFourteen() {return fourteen;}
+
+    public void setFourteen(String fourteen){ this.fourteen = fourteen;}
+
+
     @Override
     public String toString() {
         return "{" +
@@ -129,11 +140,13 @@ public class Triangle implements Ishape{
                 ", \"tenth\":\"" + tenth + "\"" +
                 ", \"eleventh\":\"" + eleventh + "\"" +
                 ", \"twelfth\":\"" + twelfth + "\"" +
+                ", \"thrteen\":\"" + thrteen + "\"" +
+                ", \"fourteen\":\"" + fourteen + "\"" +
                 '}';
     }
     public void handle(jsonShape data)
     {
-        this.setFirst("Triangle");
+        this.setFirst(data.first);
         this.setSecond(data.second);
         this.setThird(data.third);
         this.setFourth(data.fourth);
@@ -145,6 +158,7 @@ public class Triangle implements Ishape{
         this.setTenth(data.tenth);
         this.setEleventh(data.eleventh);
         this.setTwelfth(data.twelfth);
+
     }
     public Ishape clone(Ishape toBeCloned) {
         Ishape cloned = new Triangle();
@@ -161,6 +175,8 @@ public class Triangle implements Ishape{
         shadow.tenth = toBeCloned.getTenth();
         shadow.eleventh = toBeCloned.getEleventh();
         shadow.twelfth = toBeCloned.getTwelfth();
+        shadow.thrteen = toBeCloned.getThrteen();
+        shadow.fourteen = toBeCloned.getFourteen();
         cloned.handle(shadow);
         return cloned;
     }

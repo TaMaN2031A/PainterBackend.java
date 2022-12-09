@@ -129,11 +129,11 @@ public class Rectangle implements Ishape{
                 ", \"tenth\":\"" + tenth + "\"" +
                 ", \"eleventh\":\"" + eleventh + "\"" +
                 ", \"twelfth\":\"" + twelfth + "\"" +
-                '}';
+                "}";
     }
     public void handle(jsonShape data)
     {
-        this.setFirst("Rectangle");
+        this.setFirst(data.first);
         this.setSecond(data.second);
         this.setThird(data.third);
         this.setFourth(data.fourth);

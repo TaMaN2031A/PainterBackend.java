@@ -134,7 +134,7 @@ public class Circle implements Ishape{
     }
     public void handle(jsonShape data)
     {
-        this.setFirst("Circle");
+        this.setFirst(data.first);
         this.setSecond(data.second);
         this.setThird(data.third);
         this.setFourth(data.fourth);

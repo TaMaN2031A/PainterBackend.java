@@ -19,5 +19,7 @@ public class jsonShape
     public String tenth;
     public String eleventh;
     public String twelfth;
+    public String thrteen;
+    public String fourteen;
 
 }

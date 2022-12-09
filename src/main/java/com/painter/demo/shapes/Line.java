@@ -133,7 +133,7 @@ public class Line implements Ishape{
     }
     public void handle(jsonShape data)
     {
-        this.setFirst("Line");
+        this.setFirst(data.first);
         this.setSecond(data.second);
         this.setThird(data.third);
         this.setFourth(data.fourth);
@@ -144,7 +144,8 @@ public class Line implements Ishape{
         this.setNinth(data.ninth);
         this.setTenth(data.tenth);
     }
-    public Ishape clone(Ishape toBeCloned) {
+    public Ishape clone(Ishape toBeCloned)
+    {
         Ishape cloned = new Line();
         jsonShape shadow = new jsonShape();
         shadow.first = toBeCloned.getFirst();

@@ -56,6 +56,13 @@ public interface Ishape {
      public String getTwelfth();
 
      public void setTwelfth(String twelfth);
+ public String getThrteen();
+
+ public void setThrteen(String thrteen);
+
+ public String getFourteen();
+
+ public void setFourteen(String fourteen);
 
      String toString();
 

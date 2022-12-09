@@ -47,7 +47,7 @@ public class Drawer
         {
             if(iterator.getSecond().equals(oldID)) {
                 Ishape sentShape = iterator.clone(iterator);
-                sentShape.setSecond(newID);
+                sentShape.setFirst(newID);
                 storeInContainer(sentShape);
                 return;
             }
