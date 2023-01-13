@@ -1,7 +1,11 @@
 package com.painter.demo.shapes;
 
+import com.github.cliftonlabs.json_simple.JsonObject;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 
 // Polymorphism
 @Component
@@ -32,7 +36,6 @@ public interface Ishape {
 
      void setSixth(String sixth);
 
-
      String getSeventh();
 
      void setSeventh(String seventh);
@@ -45,29 +48,39 @@ public interface Ishape {
 
      void setNinth(String ninth);
 
-     public String getTenth();
+     String getTenth();
 
-     public void setTenth(String tenth);
+     void setTenth(String tenth);
 
-     public String getEleventh();
+     String getEleventh();
 
-     public void setEleventh(String eleventh);
+     void setEleventh(String eleventh);
 
-     public String getTwelfth();
+     String getTwelfth();
 
-     public void setTwelfth(String twelfth);
- public String getThrteen();
+     void setTwelfth(String twelfth);
 
- public void setThrteen(String thrteen);
+     String getThrteen();
 
- public String getFourteen();
+     void setThrteen(String thrteen);
 
- public void setFourteen(String fourteen);
+     String getFourteen();
+
+     void setFourteen(String fourteen);
 
      String toString();
 
      void handle(jsonShape data);
 
      Ishape clone(Ishape toBeCloned);
+
+     JsonObject tojsonobject();
+
+     Ishape fromjsonObject(JsonObject jsonObject);
+
+     void ObjectToXml (Document xmlDoc, Element mainElement);
+
+     Ishape  xmlToObject(Node shape_node);
+
 }
 

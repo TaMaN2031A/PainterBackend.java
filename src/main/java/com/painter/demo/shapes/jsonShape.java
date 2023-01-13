@@ -6,7 +6,6 @@ import java.io.Serializable;
 @Component
 public class jsonShape
 {
-
     public String first; // square
     public String second; //
     public String third;
